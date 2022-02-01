@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+<head>
+    <title>IT-KGB</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <link rel="stylesheet" href="{% static 'css/style.min.css' %}" type="text/css"/>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="header__wrap wrap">
+            <div class="header__menu">
+                <div class="header__logo">
+                    <a class="header__logo-img" href="#">
+                                    <img src="{% static 'img/logo.svg' %}" alt="">
+
+
+                    </a>
+                    <span class="header__logo-text">
+						Команда Григория Булаева «IT-КГБ»
+					</span>
+                </div>
+                <nav class="header__contacts">
+                    <a class="header__contacts-img" href="tel:89652108210">
+                        <img src="{% static 'img/phone.svg' %}" alt="">
+
+                    </a>
+                    <a class="header__contacts-phone" href="tel:89652108210">8 (965) 210-82-10</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main__wrap wrap">
+            <div class="main__container">
+                <section class="content">
+                    <section class="description">
+                        <h1 class="description__title">
+                            Проект команды «IT-КГБ»
+                        </h1>
+                        <h2 class="description__title-mobile">
+                            Проект команды «IT-КГБ»
+                        </h2>
+                        <div class="description__text">
+                            Принимая во внимание показатели успешности, высокотехнологичная концепция общественного
+                            уклада
+                            не оставляет шанса для направлений прогрессивного развития. Мы вынуждены отталкиваться от
+                            того,
+                            что консультация с широким активом позволяет оценить значение новых предложений.
+                        </div>
+                        <ul class="description__list">
+                            <li class="description__list-elem">Оказание услуг в области больших данных</li>
+                            <li class="description__list-elem">Диагностика и анализ сайта на выявление проблем и их
+                                устранение
+                            </li>
+                            <li class="description__list-elem">IT-консалтинг</li>
+                        </ul>
+                    </section>
+                    <section class="callback">
+                        <div class="callback__block">
+                            <div class="callback__title">
+                                Торопитесь оставить заявку на профессиональный IT анализ
+                            </div>
+                            <div class="callback__form">
+                                <form method="POST" id="callback" action="">
+                                    {% csrf_token %}
+                                    <div class="callback__form-item">
+                                        <label class="callback__form-label" for="callback"></label>
+                                        <input class="callback__form-input" name="Name" id="formName" type="text"
+                                               placeholder="ФИО">
+                                    </div>
+                                    <div class="callback__form-item">
+                                        <label class="callback__form-label" for="callback"></label>
+                                        <input class="callback__form-input" name="Email" id="formEmail" type="email"
+                                               placeholder="E-mail">
+                                    </div>
+                                    <div class="callback__form-item">
+                                        <label class="callback__form-label" for="callback"></label>
+                                        <input class="callback__form-input" name="tel" id="formTel" type="tel"
+                                               placeholder="Телефон">
+                                    </div>
+                                    <div class="callback__title">{{ message }}</div>
+                                    <div class="callback__form-button">
+                                        <button class="callback__form-submit" type="submit">
+                                            <span class="callback__button-text">Оставить заявку</span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer__img .wrapper">
+            <img src="{% static 'img/footer.jpg' %}" alt="">
+        </div>
+    </footer>
+</div>
+<script src="{% static 'js/all.min.js' %}"></script>
+</body>
+</html>
